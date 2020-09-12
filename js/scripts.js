@@ -1,14 +1,14 @@
 
-	
-	jQuery(function () {
-		
+
+jQuery(function () {
+
 	//	'use strict';
-		
-		// DOM ready, take it away
+
+	// DOM ready, take it away
 
 
 
-	jQuery( '.macaron' ).addClass('fadeout');
+	jQuery('.macaron').addClass('fadeout');
 
 
 	var $window = jQuery(window);
@@ -18,10 +18,10 @@
 	var $window_height = $window.height();
 	var $mobile_width = 768; // #BOOTSTRAP MOBILE WIDTH
 
-	jQuery('.plus').on('click', function(){
+	jQuery('.plus').on('click', function () {
 		var $myClass = jQuery(this).attr('class').split(' ')[1];
 		$tdmycl = jQuery('td#' + $myClass);
-		var $shouldHide =  $tdmycl.is(":visible") 
+		var $shouldHide = $tdmycl.is(":visible")
 
 		jQuery('.desc_td').hide();
 
@@ -32,20 +32,20 @@
 		}
 
 
-			
+
 	})
 
 
 
-    function resizeEverything() {
-    	jQuery('.slidepart').matchHeight();
-    }
+	function resizeEverything() {
+		jQuery('.slidepart').matchHeight();
+	}
 
 
 
-	
-   function sectionheight($height){
-		
+
+	function sectionheight($height) {
+
 		var $tabheight = jQuery('.maps_tabs').height();
 		var $layernavheight = jQuery('.map_layers_nav').height();
 
@@ -59,7 +59,7 @@
 			'height': $stackheight
 		});
 		jQuery('#map').css({
-			'height': $stackheight 
+			'height': $stackheight
 		});
 
 		// jQuery('section').css({
@@ -92,51 +92,51 @@
 		// 	'height': $mapheights
 		// });
 
-		
+
 
 	};
-sectionheight();
+	sectionheight();
 
-function left_slidies(){
-	jQuery('.left_slidies').each(function(){
-		var $this = jQuery(this);
-		var $indent = -$this.outerWidth();
-		$this.children('.left_slidies_arrow').on('click', function(){
-			if($this.hasClass('open')){
-		   		$this.animate({'left' : $indent }, 600);
-		   		$this.removeClass('open');
-		   	}
-		   	else {
-		   		$this.animate({'left' : 0}, 600);
-			   	$this.addClass('open');
-		   	}
+	function left_slidies() {
+		jQuery('.left_slidies').each(function () {
+			var $this = jQuery(this);
+			var $indent = -$this.outerWidth();
+			$this.children('.left_slidies_arrow').on('click', function () {
+				if ($this.hasClass('open')) {
+					$this.animate({ 'left': $indent }, 600);
+					$this.removeClass('open');
+				}
+				else {
+					$this.animate({ 'left': 0 }, 600);
+					$this.addClass('open');
+				}
+			})
+
 		})
-		
-	})
-}
+	}
 
 	left_slidies();
 
 
-// function left_slidies(){
-// 	jQuery('.left_slidies_arrow').on('click', function(){
-// 	var $this = jQuery(this).parent();
-// 	var $indent = -$this.outerWidth();
-// 		if($this.hasClass('open')){
-// 	   		$this.animate({'left' : $indent }, 600);
-// 	   		$this.removeClass('open');
-// 	   	}
-// 	   	else {
-// 	   		$this.animate({'left' : 0}, 600);
-// 		   	$this.addClass('open');
-// 	   	}
-// 	})
-	
-// }
+	// function left_slidies(){
+	// 	jQuery('.left_slidies_arrow').on('click', function(){
+	// 	var $this = jQuery(this).parent();
+	// 	var $indent = -$this.outerWidth();
+	// 		if($this.hasClass('open')){
+	// 	   		$this.animate({'left' : $indent }, 600);
+	// 	   		$this.removeClass('open');
+	// 	   	}
+	// 	   	else {
+	// 	   		$this.animate({'left' : 0}, 600);
+	// 		   	$this.addClass('open');
+	// 	   	}
+	// 	})
+
+	// }
 
 
 
-	
+
 	// jQuery(window).on('resize', function(){
 	// 	var $window = jQuery(window);
 	// 	var $window_height = $window.height();
@@ -145,69 +145,81 @@ function left_slidies(){
 
 
 
-    function resizecolumns() {
-    	jQuery('.two_columns').each(function(){
-    		jQuery('.col_match').matchHeight();
-    	})
-    }
-    resizecolumns();
-    jQuery(window).on('resize', function(){ resizecolumns(); });
-
-
-	function makeSliders(){
-			jQuery('.bxslider').each(function(){
-			var $this = jQuery(this);
-			var slider_has_many_children = ($this.children('li').length > 1) ? true: false;
-
-			var slider = $this.bxSlider({
-
-					auto: slider_has_many_children,
-					pager: false,
-		    		controls: slider_has_many_children,
-					mode:'fade',
-					autoHover : false,
-					adaptiveHeight: true,
-					speed:'2000',
-
-					onSlideAfter: function($slideElement, oldIndex, newIndex) {
-		       
-		           		jQuery('.active-slide', $this  ).removeClass('active-slide');
-		            	$slideElement.addClass('active-slide')
-		       		 },
-		        	onSliderLoad: function () {
-		           		jQuery('.bxslider > li').eq(1).addClass('active-slide')
-		       		},
-
-				}); 
-			// var $bxcount = jQuery(".bx-pager").children().length;
-			// 	if ($bxcount == 1) {jQuery('.bx-pager-item').hide();};
+	function resizecolumns() {
+		jQuery('.two_columns').each(function () {
+			jQuery('.col_match').matchHeight();
 		})
-	
+	}
+	resizecolumns();
+	jQuery(window).on('resize', function () { resizecolumns(); });
+
+
+	function makeSliders() {
+		jQuery('.bxslider').each(function () {
+			var $this = jQuery(this);
+			makeSlider($this, true);
+		})
+
+		// non adaptive height
+		jQuery('.bxslider_fix_height').each(function () {
+			var $this = jQuery(this);
+			makeSlider($this, false);
+		})
+
+
+
 	}
 
-	
+	function makeSlider(slider, adaptiveheight) {
+		var slider_has_many_children = (slider.children('li').length > 1) ? true : false;
+
+		slider.bxSlider({
+
+			auto: slider_has_many_children,
+			pager: false,
+			controls: slider_has_many_children,
+			mode: 'fade',
+			autoHover: false,
+			adaptiveHeight: adaptiveheight,
+			speed: '2000',
+
+			onSlideAfter: function ($slideElement, oldIndex, newIndex) {
+
+				jQuery('.active-slide', slider).removeClass('active-slide');
+				$slideElement.addClass('active-slide')
+			},
+			onSliderLoad: function () {
+				jQuery('.bxslider > li').eq(1).addClass('active-slide')
+			},
+
+		});
+		// var $bxcount = jQuery(".bx-pager").children().length;
+		// 	if ($bxcount == 1) {jQuery('.bx-pager-item').hide();};
+	}
 
 
 
-	function minHeightForSection(){
+
+
+	function minHeightForSection() {
 		jQuery('section').addClass('min_heightvh')
 	}
 
 
-		
+
 	// SHOW WELCOME SCREEN
 	jQuery('html, body').css({
-	    'overflow': 'hidden',
-	    'height': '100%'
+		'overflow': 'hidden',
+		'height': '100%'
 	});
 
 
 	setTimeout(init, 200);
 
-	setTimeout(function(){
+	setTimeout(function () {
 		jQuery('html, body').css({
-		    'overflow': 'auto',
-		    'height': 'auto'
+			'overflow': 'auto',
+			'height': 'auto'
 		});
 		jQuery('.loader').hide();
 
@@ -215,12 +227,12 @@ function left_slidies(){
 
 
 
-	if (  $window_width > $mobile_width   ){
+	if ($window_width > $mobile_width) {
 	}
 
 
 
-	function init(){
+	function init() {
 
 		console.log('init');
 
@@ -229,26 +241,26 @@ function left_slidies(){
 		// }
 
 
-		if(typeof window.orientation !== 'undefined'){
+		if (typeof window.orientation !== 'undefined') {
 			/// THIS IS FOR MOBILE USERS
 			//jQuery('.situation_maps').hide();
 			jQuery('#amenities_map_layers').hide();
 			jQuery('#globalmap').click();
 			jQuery('.maps_tabs').hide();
 			jQuery('.map_layers_nav').hide();
-			jQuery('section.fullimg.titlesection').css({'background-attachment' : 'scroll'});
+			jQuery('section.fullimg.titlesection').css({ 'background-attachment': 'scroll' });
 
-		
+
 		} else {
 			// THIS IS FOR DESKTOP USERS
 			setVideo();
 			setAmenitiesMap();
-			 makeSliders();
-			 minHeightForSection();
+			makeSliders();
+			minHeightForSection();
 			jQuery('.globalmap').addClass('invisible');
 
 			// if no amenities map, show google mao
-			if ( jQuery('#amenites').length == 0  ) {
+			if (jQuery('#amenites').length == 0) {
 				jQuery('#globalmap').click();
 			}
 		}
@@ -256,19 +268,19 @@ function left_slidies(){
 		// var $window = jQuery(window);
 		// var $window_width = $window.width();
 		// sectionheight($window_height);
-		
-
-	}	
 
 
+	}
 
 
 
 
-	  jQuery('#show_nav_button').on('click', function(e){
-	    e.preventDefault();
-	    jQuery('header nav ul').toggleClass('navVisible');
-	  });
+
+
+	jQuery('#show_nav_button').on('click', function (e) {
+		e.preventDefault();
+		jQuery('header nav ul').toggleClass('navVisible');
+	});
 
 
 
@@ -280,7 +292,7 @@ function left_slidies(){
 	// jQuery('.slidepart').matchHeight();
 
 
-	jQuery('.partnerlogos').on('click', function(e){
+	jQuery('.partnerlogos').on('click', function (e) {
 		e.preventDefault();
 		var $this = jQuery(this);
 		var $href = $this.attr('href');
@@ -296,7 +308,7 @@ function left_slidies(){
 
 	// animate sliding down page to furniture section
 	// $furniture_containers.on('click', function(e){
-	jQuery('nav ul a, .rdv').on('click', function(e){
+	jQuery('nav ul a, .rdv').on('click', function (e) {
 
 		e.preventDefault();
 
@@ -307,10 +319,10 @@ function left_slidies(){
 
 		if (typeof $hash !== 'undefined') {
 			var $location = jQuery('#' + $hash);
-			if($location.length  > 0) {
-				jQuery("html, body").animate({ scrollTop: $location.offset().top - 80}, 1000);
+			if ($location.length > 0) {
+				jQuery("html, body").animate({ scrollTop: $location.offset().top - 80 }, 1000);
 			} else {
-				window.location.href = $href;	
+				window.location.href = $href;
 			}
 		} else {
 			window.location.href = $href;
@@ -323,36 +335,36 @@ function left_slidies(){
 
 
 
-		jQuery('.person_chooser').on('click', function(e){
-			e.preventDefault();
-			var $this = jQuery(this);
-			var $person = $this.data('person');
+	jQuery('.person_chooser').on('click', function (e) {
+		e.preventDefault();
+		var $this = jQuery(this);
+		var $person = $this.data('person');
 
-			jQuery('#person_type').val($person);
-		
-			jQuery('.person_chooser').removeClass('selected_person');
-			 $this.addClass('selected_person');
+		jQuery('#person_type').val($person);
 
-			if ($person == 'acheteur') {
-				jQuery('.group_for_acheteur').show();
-				jQuery('.group_for_courtier').hide();
+		jQuery('.person_chooser').removeClass('selected_person');
+		$this.addClass('selected_person');
 
-
-			} else {
-				jQuery('.group_for_acheteur').hide();
-				jQuery('.group_for_courtier').show();
-
-			}
-		});
+		if ($person == 'acheteur') {
+			jQuery('.group_for_acheteur').show();
+			jQuery('.group_for_courtier').hide();
 
 
+		} else {
+			jQuery('.group_for_acheteur').hide();
+			jQuery('.group_for_courtier').show();
+
+		}
+	});
 
 
 
 
-	
 
-	
+
+
+
+
 	// var $next_thing_after_nav = jQuery('#next_thing_after_nav');
 
 
@@ -362,28 +374,28 @@ function left_slidies(){
 	//  var $head_fixed = false;
 
 
- var $header = jQuery('#header');
-	var scroll_pos_prev  = -1;
+	var $header = jQuery('#header');
+	var scroll_pos_prev = -1;
 	// var $navigation_cont = jQuery('header .navigation');
 
-	
-
-    $window.on('scroll', function(){
 
 
-		 var scroll_pos = $window.scrollTop() ;
-
-		 // if ( (scroll_pos > ($window_height + 100) )  && (scroll_pos < scroll_pos_prev)  ) {
-		 if ( (scroll_pos > ($window_height + 100) )  ) {
-
-	 		$header.addClass('fixed');
-	 	} else {
-	 		$header.removeClass('fixed');
-	 	}
+	$window.on('scroll', function () {
 
 
+		var scroll_pos = $window.scrollTop();
 
-		 scroll_pos_prev = scroll_pos;
+		// if ( (scroll_pos > ($window_height + 100) )  && (scroll_pos < scroll_pos_prev)  ) {
+		if ((scroll_pos > ($window_height + 100))) {
+
+			$header.addClass('fixed');
+		} else {
+			$header.removeClass('fixed');
+		}
+
+
+
+		scroll_pos_prev = scroll_pos;
 
 		// if (  scroll_pos >= $head_y_pos  && $head_fixed == false    ) {
 		// 	$header.addClass('fixed');
@@ -404,59 +416,58 @@ function left_slidies(){
 
 
 
-   });
-
-	
-   
-jQuery('.nav_button').on('click', function(){
-	var $this = jQuery(this);
-	var $id = $this.attr('id');
-	// $this.toggleClass('active');
-	jQuery('.' +  $id).toggle();
-})
-
-jQuery('.map_layers_nav span').on('click', function(){
-	jQuery(this).toggleClass('active');
-})
-
-//jQuery('.map_layers_nav').matchHeight();
+	});
 
 
-jQuery('#amenites').on('click', function(){
-	jQuery(this).addClass('active');
-	jQuery('#globalmap').removeClass('active');
-	jQuery('.amenites').removeClass('invisible');
-	jQuery('.globalmap').addClass('invisible');
-	jQuery('.mapsidebar').hide();
-})
-jQuery('#globalmap').on('click', function(){
-	jQuery(this).addClass('active');
-	jQuery('#amenites').removeClass('active');
-	jQuery('.globalmap').removeClass('invisible');
-	jQuery('.amenites').addClass('invisible');
 
-	initMap();
+	jQuery('.nav_button').on('click', function () {
+		var $this = jQuery(this);
+		var $id = $this.attr('id');
+		// $this.toggleClass('active');
+		jQuery('.' + $id).toggle();
+	})
 
-})
+	jQuery('.map_layers_nav span').on('click', function () {
+		jQuery(this).toggleClass('active');
+	})
+
+	//jQuery('.map_layers_nav').matchHeight();
 
 
-jQuery('#courtier').on('click', function(){
-	jQuery('.courtier').show();
-	jQuery('.acheteur').hide();
-	jQuery('#courtier').addClass('active');
-	jQuery('#acheteur').removeClass('active');
-})
-jQuery('#acheteur').on('click', function(){
-	jQuery('.acheteur').show();
-	jQuery('.courtier').hide();
-	jQuery('#acheteur').addClass('active');
-	jQuery('#courtier').removeClass('active');
-})
+	jQuery('#amenites').on('click', function () {
+		jQuery(this).addClass('active');
+		jQuery('#globalmap').removeClass('active');
+		jQuery('.amenites').removeClass('invisible');
+		jQuery('.globalmap').addClass('invisible');
+		jQuery('.mapsidebar').hide();
+	})
+	jQuery('#globalmap').on('click', function () {
+		jQuery(this).addClass('active');
+		jQuery('#amenites').removeClass('active');
+		jQuery('.globalmap').removeClass('invisible');
+		jQuery('.amenites').addClass('invisible');
+
+		initMap();
+
+	})
 
 
-		
+	jQuery('#courtier').on('click', function () {
+		jQuery('.courtier').show();
+		jQuery('.acheteur').hide();
+		jQuery('#courtier').addClass('active');
+		jQuery('#acheteur').removeClass('active');
+	})
+	jQuery('#acheteur').on('click', function () {
+		jQuery('.acheteur').show();
+		jQuery('.courtier').hide();
+		jQuery('#acheteur').addClass('active');
+		jQuery('#courtier').removeClass('active');
+	})
+
+
+
 });
-	
 
 
 
@@ -464,237 +475,233 @@ jQuery('#acheteur').on('click', function(){
 
 
 
-     var map;
-     var markers = [];
 
-      function initMap() {
+var map;
+var markers = [];
 
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: latitude , lng: longitude  },
-          zoom: 13,
-          scrollwheel: false,
-           draggable: !("ontouchend" in document),
-          styles: [
-            {
-              featureType: 'all',
-              stylers: [
-                { saturation: -80 }
-              ]
-            },{
-              featureType: 'road.arterial',
-              elementType: 'geometry',
-              stylers: [
-                { hue: '#00ffee' },
-                { saturation: 50 }
-              ]
-            },{featureType:'road.arterial','elementType':'labels','stylers':[{'visibility':'off'}]},
-            {'featureType':'road.highway','elementType':'labels','stylers':[{'visibility':'off'}]},
-            {
-              featureType: 'poi.business',
-              elementType: 'labels',
-              stylers: [
-                { visibility: 'off' }
-              ]
-            }
-          ]
-        });
+function initMap() {
 
 
-
-
-        map.addListener('click', function() {
-            jQuery('.mapsidebar').hide();
-          });
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: { lat: latitude, lng: longitude },
+		zoom: 13,
+		scrollwheel: false,
+		draggable: !("ontouchend" in document),
+		styles: [
+			{
+				featureType: 'all',
+				stylers: [
+					{ saturation: -80 }
+				]
+			}, {
+				featureType: 'road.arterial',
+				elementType: 'geometry',
+				stylers: [
+					{ hue: '#00ffee' },
+					{ saturation: 50 }
+				]
+			}, { featureType: 'road.arterial', 'elementType': 'labels', 'stylers': [{ 'visibility': 'off' }] },
+			{ 'featureType': 'road.highway', 'elementType': 'labels', 'stylers': [{ 'visibility': 'off' }] },
+			{
+				featureType: 'poi.business',
+				elementType: 'labels',
+				stylers: [
+					{ visibility: 'off' }
+				]
+			}
+		]
+	});
 
 
 
 
-        var iconBase = 'http://praemium-re.com//wp-content/themes/praemium_mini/img/icons/';
-        var icons = {
-          bibliotheque: {
-            icon: {
-                url: iconBase + 'icone_bibliotheque_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            centreloisirs: {
-            icon: {
-                url: iconBase + 'icone_centreloisirs_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            commerce: {
-            icon: {
-                url: iconBase + 'icone_commerce_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            ecole: {
-            icon: {
-                url: iconBase + 'icone_ecole_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            parc: {
-            icon: {
-                url: iconBase + 'icone_jardin_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            parking: {
-            icon: {
-                url: iconBase + 'icone_parking_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            pharmacie: {
-            icon: {
-                url: iconBase + 'icone_pharmacie_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            sport: {
-            icon: {
-                url: iconBase + 'icone_sport_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            transport: {
-            icon: {
-                url: iconBase + 'icone_transport_bleu.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            },
-            projet: {
-            icon: {
-                url: iconBase + 'icone_projet_etoile.png',// url
-                scaledSize: new google.maps.Size(30, 30), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(15, 15) // anchor
-              }
-            }
-        }
-
-
-    var infowindow = new google.maps.InfoWindow;
+	map.addListener('click', function () {
+		jQuery('.mapsidebar').hide();
+	});
 
 
 
 
-            
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-        marker = new google.maps.Marker({
-             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-             map: map,
-             category: locations[i][3],
-             icon: icons[  locations[i][3]   ].icon,
-             content: locations[i][0]
-        });
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-             return function() {
-                // infowindow.setContent(locations[i][0]);
-                // infowindow.setOptions({maxWidth:300});
-                // infowindow.open(map, marker);
-                jQuery('#markercontent').html(marker.content);
-                jQuery('.mapsidebar').show();
-
-             }
-
-        })(marker, i));
-
-
-
-       markers.push(marker);
-       }
-
-
-}
-
-function toggleCategory( category) {
-  for (var i = 0; i < markers.length; i++) {
-    marker = markers[i];
-    if (marker.category == category) {
-      marker.setVisible(   !marker.visible   ); // if visible hide, if hidden show.
-    }
-  }
-}
-
-
-
-
-
-	function setVideo(){
-		var $video = jQuery('#vidbg');
-
-		if (typeof video_mp4  != 'undefined' ) {
-			$video.append('<source src="' +  video_mp4 + '" />');
+	var iconBase = 'http://praemium-re.com//wp-content/themes/praemium_mini/img/icons/';
+	var icons = {
+		bibliotheque: {
+			icon: {
+				url: iconBase + 'icone_bibliotheque_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		centreloisirs: {
+			icon: {
+				url: iconBase + 'icone_centreloisirs_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		commerce: {
+			icon: {
+				url: iconBase + 'icone_commerce_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		ecole: {
+			icon: {
+				url: iconBase + 'icone_ecole_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		parc: {
+			icon: {
+				url: iconBase + 'icone_jardin_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		parking: {
+			icon: {
+				url: iconBase + 'icone_parking_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		pharmacie: {
+			icon: {
+				url: iconBase + 'icone_pharmacie_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		sport: {
+			icon: {
+				url: iconBase + 'icone_sport_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		transport: {
+			icon: {
+				url: iconBase + 'icone_transport_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		projet: {
+			icon: {
+				url: iconBase + 'icone_projet_etoile.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
 		}
-		if (typeof video_ogv  != 'undefined' ) {
-			$video.append('<source src="' +  video_ogv + '" />');
-		}
-		
-		var video = document.querySelector('video');
-		video.play();
-
-
 	}
 
 
+	var infowindow = new google.maps.InfoWindow;
 
 
 
-	// // get the video
-	// var video = document.querySelector('video');
-	// // use the whole window and a *named function*
-	// window.addEventListener('touchstart', function videoStart() {
-	//   video.play();
-	//   console.log('first touch');
-	//   // remove from the window and call the function we are removing
-	//   this.removeEventListener('touchstart', videoStart);
-	// });
-function setmapsectionheight(){
-	var idealheight = jQuery('img.layer_null').height();
-console.log(idealheight); 
-}
 
-	function setAmenitiesMap(){
 
-		if (typeof $amenities_layers != 'undefined' ) {
-			$map_layers = jQuery('#amenities_map_layers');
-			for (var i = 0;  i < $amenities_layers.length ; i++) {
-				var layer = $amenities_layers[i];
-				var img =  '<img class="layers_stack layer_' + layer.label  + '" src="' + layer.src + '" style="position:absolute; left:0;width:100%; height:auto;" />';
-				$map_layers.append(img);
+	var marker, i;
 
-				setmapsectionheight();
+	for (i = 0; i < locations.length; i++) {
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map,
+			category: locations[i][3],
+			icon: icons[locations[i][3]].icon,
+			content: locations[i][0]
+		});
+		google.maps.event.addListener(marker, 'click', (function (marker, i) {
+			return function () {
+				// infowindow.setContent(locations[i][0]);
+				// infowindow.setOptions({maxWidth:300});
+				// infowindow.open(map, marker);
+				jQuery('#markercontent').html(marker.content);
+				jQuery('.mapsidebar').show();
 
 			}
 
+		})(marker, i));
+
+
+
+		markers.push(marker);
+	}
+
+
+}
+
+function toggleCategory(category) {
+	for (var i = 0; i < markers.length; i++) {
+		marker = markers[i];
+		if (marker.category == category) {
+			marker.setVisible(!marker.visible); // if visible hide, if hidden show.
+		}
+	}
+}
+
+
+
+
+
+function setVideo() {
+	var $video = jQuery('#vidbg');
+
+	if (typeof video_mp4 != 'undefined') {
+		$video.append('<source src="' + video_mp4 + '" />');
+	}
+	if (typeof video_ogv != 'undefined') {
+		$video.append('<source src="' + video_ogv + '" />');
+	}
+
+	var video = document.querySelector('video');
+	video.play();
+
+
+}
+
+
+
+
+
+// // get the video
+// var video = document.querySelector('video');
+// // use the whole window and a *named function*
+// window.addEventListener('touchstart', function videoStart() {
+//   video.play();
+//   console.log('first touch');
+//   // remove from the window and call the function we are removing
+//   this.removeEventListener('touchstart', videoStart);
+// });
+function setmapsectionheight() {
+	var idealheight = jQuery('img.layer_null').height();
+	console.log(idealheight);
+}
+
+function setAmenitiesMap() {
+
+	if (typeof $amenities_layers != 'undefined') {
+		$map_layers = jQuery('#amenities_map_layers');
+		for (var i = 0; i < $amenities_layers.length; i++) {
+			var layer = $amenities_layers[i];
+			var img = '<img class="layers_stack layer_' + layer.label + '" src="' + layer.src + '" style="position:absolute; left:0;width:100%; height:auto;" />';
+			$map_layers.append(img);
+
+			setmapsectionheight();
 
 		}
-
-
 
 
 	}
@@ -702,6 +709,11 @@ console.log(idealheight);
 
 
 
+}
 
-	
+
+
+
+
+
 
