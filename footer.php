@@ -12,7 +12,7 @@
 
 
 
-
+	<?php wp_footer(); ?>
 
 		<!-- <script src="//code.jquery.com/jquery-latest.js"></script> -->
 
@@ -21,7 +21,7 @@
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBe7eInJv5lt4PtI8ddfMVcBMlSL0GLrrU'></script>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=0.0.9"></script>
 
-		<?php wp_footer(); ?>
+	
 
 		<!-- analytics -->
 		<script>

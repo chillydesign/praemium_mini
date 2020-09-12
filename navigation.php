@@ -11,7 +11,7 @@
 <?php if ( isset($instagram) && strlen($instagram) > 3   ) : ?>
        <a target="_blank" href="<?php echo $instagram; ?>" class="social_link social_instagram">Instagram</a>
 <?php endif; ?>
-              <a target="_blank" href="https://www.linkedin.com/company/1641770?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A1641770%2Cidx%3A2-1-2%2CtarId%3A1481892370165%2Ctas%3Apraemium%20immo" class="social_link social_linkedin">LinkedIn</a>
+              <a style="display:none;" target="_blank" href="https://www.linkedin.com/company/1641770?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A1641770%2Cidx%3A2-1-2%2CtarId%3A1481892370165%2Ctas%3Apraemium%20immo" class="social_link social_linkedin">LinkedIn</a>
   <a href="mailto:info@praemium.ch?<?php echo htmlentities('subject=Les Townhouses du Cèdre&body=' . get_home_url() ); ?>" class="social_link social_email">Email</a>
           </div>
           <div class="col-sm-6 col-sm-right" >

@@ -13,7 +13,6 @@
   </div>
 
 
-
 <?php if ( have_rows('block_map') ) : ?>
   <div class="amenites">
       <div class="map_layers_nav">
