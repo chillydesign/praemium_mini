@@ -992,8 +992,8 @@ span {
 
 @media (min-width: 768px) {
   .partenairesslider li {
-    padding: 0px 60px;
-    height: 320px;
+    padding: 35px 60px;
+    height: 310px;
   }
 }
 

@@ -116,7 +116,7 @@ function html5blank_conditional_scripts()
 
 function wf_version()
 {
-    return '1.8.0';
+    return '1.8.1';
 }
 
 // Load HTML5 Blank styles
@@ -325,7 +325,7 @@ function html5blankcomments($comment, $args, $depth)
             <div class="col-sm-10 comment-meta commentmetadata">
                 <?php echo get_comment_author_link() ?> on <?php
                                                             printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '');
-                                                                                        ?>
+                                                                                                                                        ?>
 
                 <?php comment_text() ?>
 

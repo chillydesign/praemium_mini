@@ -164,7 +164,6 @@ jQuery(function () {
 			var adaptiveheight = true;
 			if ($this.data('adaptiveheight') == false) {
 				adaptiveheight = false;
-				console.log('not adapative height');
 			}
 			var slider = $this.bxSlider({
 
