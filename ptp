@@ -1,0 +1,10 @@
+
+git push origin master;
+
+
+ssh  praemium << EOF
+cd ~/web/wp-content/themes/praemium_mini;
+git pull origin master;
+echo "DONE!";
+EOF
+
