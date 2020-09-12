@@ -156,45 +156,40 @@ jQuery(function () {
 
 	function makeSliders() {
 		jQuery('.bxslider').each(function () {
+
 			var $this = jQuery(this);
-			makeSlider($this, true);
+			var slider_has_many_children = ($this.children('li').length > 1) ? true : false;
+
+
+			var adaptiveheight = true;
+			if ($this.data('adaptiveheight') == 'false') {
+				adaptiveheight = false;
+				console.log('not adapative height');
+			}
+			var slider = $this.bxSlider({
+
+				auto: slider_has_many_children,
+				pager: false,
+				controls: slider_has_many_children,
+				mode: 'fade',
+				autoHover: false,
+				adaptiveHeight: adaptiveheight,
+				speed: '2000',
+
+				onSlideAfter: function ($slideElement, oldIndex, newIndex) {
+
+					jQuery('.active-slide', $this).removeClass('active-slide');
+					$slideElement.addClass('active-slide')
+				},
+				onSliderLoad: function () {
+					jQuery('.bxslider > li').eq(1).addClass('active-slide')
+				},
+
+			});
+			// var $bxcount = jQuery(".bx-pager").children().length;
+			// 	if ($bxcount == 1) {jQuery('.bx-pager-item').hide();};
 		})
 
-		// non adaptive height
-		jQuery('.bxslider_fix_height').each(function () {
-			var $this = jQuery(this);
-			makeSlider($this, false);
-		})
-
-
-
-	}
-
-	function makeSlider(slider, adaptiveheight) {
-		var slider_has_many_children = (slider.children('li').length > 1) ? true : false;
-
-		slider.bxSlider({
-
-			auto: slider_has_many_children,
-			pager: false,
-			controls: slider_has_many_children,
-			mode: 'fade',
-			autoHover: false,
-			adaptiveHeight: adaptiveheight,
-			speed: '2000',
-
-			onSlideAfter: function ($slideElement, oldIndex, newIndex) {
-
-				jQuery('.active-slide', slider).removeClass('active-slide');
-				$slideElement.addClass('active-slide')
-			},
-			onSliderLoad: function () {
-				jQuery('.bxslider > li').eq(1).addClass('active-slide')
-			},
-
-		});
-		// var $bxcount = jQuery(".bx-pager").children().length;
-		// 	if ($bxcount == 1) {jQuery('.bx-pager-item').hide();};
 	}
 
 
