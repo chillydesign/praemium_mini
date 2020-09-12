@@ -6,10 +6,17 @@
       } else {
         $directions = false;
       } ?>
-      <?php if (have_rows('block_map')) { ?>
-        <span class="active" id="amenites">Plan des aménités locales</span>
-      <?php } # END OF IF HAVE ROWS BLOCK MAP 
+
+      <?php if (get_sub_field('hide_couches')) : ?>
+      <?php else : ?>
+        <?php if (have_rows('block_map')) { ?>
+          <span class="active" id="amenites">Plan des aménités locales</span>
+        <?php } # END OF IF HAVE ROWS BLOCK MAP 
+        ?>
+      <?php endif; # END OF IF DONT HIDE COUCHES 
       ?>
+
+
       <?php if (get_sub_field('hide_situation') == false) { ?><span id="globalmap">Plan de situation</span><?php } ?>
       <?php if ($directions) { ?>
         <span id="directions"><a style="color:white; text-decoration:none;" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></span>
