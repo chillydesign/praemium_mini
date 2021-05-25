@@ -244,7 +244,8 @@ function get_email_from_praemium_form () {
         // IF DATA HAS BEEN POSTED
   if ( isset($_POST['action'])  && $_POST['action'] == 'praemium_form'   ) :
 
-   $recipient = 'info@praemium.ch;nc@praemium.ch';
+    // recipient should be an array if more than 1 person
+   $recipient = array('info@praemium.ch','nc@praemium.ch');
    $subject =  $_POST['promotion'] . ' - Message '. $_POST['person_type'];
    $body = "Réponses au formulaire de contact:\n\n";
    $comment_content = '';
@@ -359,8 +360,3 @@ endif;
     else
       return false;
   }
-
-
-
-
-?>
