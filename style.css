@@ -1922,3 +1922,24 @@ a.bouton404 {
   color: white;
   text-decoration: none;
 }
+
+
+
+.alert {
+  margin: 10px 0;
+  padding: 12px 30px;
+  text-align: center;
+  background-color: #276084;
+  color: white;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #a5d67b;
+  color: #119b11
+}
+
+.alert-danger {
+  background-color: #e25656;
+  color: #8b2214
+}

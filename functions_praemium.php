@@ -89,6 +89,13 @@ function praemium_form_shortcode($atts) {
     ';
 
 
+
+  if (isset($_GET['success'])) :
+    $pr_frm .=  '<p class="alert alert-success">Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>';
+  elseif (isset($_GET['problem'])) :
+    $pr_frm .=  '<p class="alert alert-danger">Une erreur s’est produite. Veuillez réessayer.</p>';
+  endif;
+
   $pr_frm .= ' <form id="course_form" action="' .  esc_url(admin_url('admin-post.php')) . '" method="post">
 
     <input type="hidden" id="promotion" name="promotion" value="' . get_the_title($post)  . '">
@@ -214,11 +221,6 @@ function praemium_form_shortcode($atts) {
 
 </form>';
 
-  if (isset($_GET['success'])) :
-    $pr_frm .=  '<p class="alert alert-success">Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>';
-  elseif (isset($_GET['problem'])) :
-    $pr_frm .=  '<p class="alert alert-danger">Une erreur s’est produite. Veuillez réessayer.</p>';
-  endif;
 
   // HIDDEN ACTION INPUT IS REQUIRED TO POST THE DATA TO THE CORRECT PLACE
 
