@@ -13,7 +13,13 @@
 			</div>
 
 			<div class="clear"></div>
-		<?php } ?>
+
+			<?php $mft = get_field('macaron_fadeout_time'); ?>
+		<?php	if ($mft) : ?>
+			<script>
+				var macaroon_fadeout_time = <?php echo $mft; ?>;
+			</script>
+		<?php endif; ?>
 
 		<div id="header_container">
 			<section class="titlesection" id="home">
@@ -79,7 +85,8 @@
 
 								<?php } elseif (get_sub_field('slide_type') == 'slidies') { ?>
 
-									<li class="slidies  <?php echo get_sub_field('background_color'); ?>" style="background-image: url(<?php echo get_sub_field('image'); ?>); width:100%; background-size:cover <?php// echo  get_sub_field('background_size'); ?>">
+									<li class="slidies  <?php echo get_sub_field('background_color'); ?>" style="background-image: url(<?php echo get_sub_field('image'); ?>); width:100%; background-size:cover <? php // echo  get_sub_field('background_size'); 
+																																																					?>">
 										<div class="left_slidies open  ">
 											<div class="left_slidies_inner"><?php echo get_sub_field('text'); ?></div>div>
 											<div class="left_slidies_arrow">

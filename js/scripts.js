@@ -5,13 +5,16 @@ jQuery(function () {
 	//	'use strict';
 
 	// DOM ready, take it away
+	if (typeof macaroon_fadeout_time == "undefined") {
+		macaroon_fadeout_time = 10000;
+	}
 
 	var $macaroon = jQuery('.macaron');
 	setTimeout(() => {
 		$macaroon.animate({ 'opacity': 0 }, 1000, () => {
 			$macaroon.hide();
 		});
-	}, 7000);
+	}, macaroon_fadeout_time);
 
 
 
