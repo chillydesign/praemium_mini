@@ -14,12 +14,12 @@
 
 			<div class="clear"></div>
 
-			<?php $mft = get_field('macaron_fadeout_time'); ?>
-		<?php	if ($mft) : ?>
-			<script>
-				var macaroon_fadeout_time = <?php echo $mft; ?>;
-			</script>
-		<?php endif; ?>
+			<?php if ($mft) : ?>
+				<script>
+					var macaroon_fadeout_time = <?php echo $mft; ?>;
+				</script>
+			<?php endif; ?>
+		<?php } ?>
 
 		<div id="header_container">
 			<section class="titlesection" id="home">
