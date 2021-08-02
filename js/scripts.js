@@ -6,9 +6,13 @@ jQuery(function () {
 
 	// DOM ready, take it away
 
+	var $macaroon = jQuery('.macaron');
+	setTimeout(() => {
+		$macaroon.animate({ 'opacity': 0 }, 1000, () => {
+			$macaroon.hide();
+		});
+	}, 7000);
 
-
-	jQuery('.macaron').addClass('fadeout');
 
 
 	var $window = jQuery(window);
