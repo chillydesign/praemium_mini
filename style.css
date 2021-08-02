@@ -683,7 +683,7 @@ span.m2 {
 }
 
 .btn.btn_inline {
-  display:inline-block;
+  display: inline-block;
   margin: 10px auto;
   text-align: center;
 }
@@ -1117,7 +1117,8 @@ section.situation_maps {
   position: relative;
   height: calc(70.1897vw + 114px);
   min-height: 0;
-  overflow: hidden
+  overflow: hidden;
+  background-color: white;
 }
 
 .maps_tabs span {
