@@ -604,7 +604,39 @@ function initMap() {
 				origin: new google.maps.Point(0, 0), // origin
 				anchor: new google.maps.Point(15, 15) // anchor
 			}
-		}
+		},
+		yellow_circle: {
+			icon: {
+				url: iconBase + 'icone_jeune.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		blue_circle: {
+			icon: {
+				url: iconBase + 'icone_bleu.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		green_circle: {
+			icon: {
+				url: iconBase + 'icone_vert.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
+		red_circle: {
+			icon: {
+				url: iconBase + 'icone_rouge.png',// url
+				scaledSize: new google.maps.Size(30, 30), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 15) // anchor
+			}
+		},
 	}
 
 
