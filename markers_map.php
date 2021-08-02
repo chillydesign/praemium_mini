@@ -9,7 +9,7 @@
 
   <?php if ($directions) { ?>
     <div class="only_on_mobile mobile_itineraire">
-      <p><a class="btn" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></p>
+      <p style="text-align:center"><a class="btn btn_inline" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></p>
     </div>
 
   <?php } ?>

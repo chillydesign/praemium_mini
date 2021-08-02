@@ -682,6 +682,12 @@ span.m2 {
   border-radius: 5px;
 }
 
+.btn.btn_inline {
+  display:inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
+
 span.plus {
   background: #276084;
   height: 20px;
