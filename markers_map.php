@@ -85,6 +85,14 @@
   </div>
 
 
+  <?php if ($directions) { ?>
+    <div class="only_on_mobile mobile_itineraire">
+      <p><a class="btn" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></p>
+    </div>
+
+  <?php } ?>
+
+
 
   <script>
     var latitude = <?php echo get_sub_field('lat_center'); ?>;

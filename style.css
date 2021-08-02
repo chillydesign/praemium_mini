@@ -1945,3 +1945,13 @@ a.bouton404 {
   background-color: #e25656;
   color: #8b2214
 }
+
+
+
+@media (min-width: 768px) {
+  .only_on_mobile {
+    display: none;
+
+  }
+
+}

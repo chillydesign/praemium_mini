@@ -85,7 +85,7 @@
 
 								<?php } elseif (get_sub_field('slide_type') == 'slidies') { ?>
 
-									<li class="slidies  <?php echo get_sub_field('background_color'); ?>" style="background-image: url(<?php echo get_sub_field('image'); ?>); width:100%; background-size:cover <? php // echo  get_sub_field('background_size'); 
+									<li class="slidies  <?php echo get_sub_field('background_color'); ?>" style="background-image: url(<?php echo get_sub_field('image'); ?>); width:100%; background-size:cover <?php // echo  get_sub_field('background_size'); 
 																																																					?>">
 										<div class="left_slidies open  ">
 											<div class="left_slidies_inner"><?php echo get_sub_field('text'); ?></div>div>
