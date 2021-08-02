@@ -1,11 +1,22 @@
 <section class="situation_maps" id="cartes">
+
+  <?php if (get_sub_field('directions') and !get_sub_field('hide_directions')) {
+    $directions = get_sub_field('directions');
+  } else {
+    $directions = false;
+  } ?>
+
+
+  <?php if ($directions) { ?>
+    <div class="only_on_mobile mobile_itineraire">
+      <p><a class="btn" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></p>
+    </div>
+
+  <?php } ?>
+
+
   <div class="maps_tabs">
     <div class="container">
-      <?php if (get_sub_field('directions') and !get_sub_field('hide_directions')) {
-        $directions = get_sub_field('directions');
-      } else {
-        $directions = false;
-      } ?>
 
       <?php if (get_sub_field('hide_couches')) : ?>
       <?php else : ?>
@@ -84,13 +95,6 @@
     </div>
   </div>
 
-
-  <?php if ($directions) { ?>
-    <div class="only_on_mobile mobile_itineraire">
-      <p><a class="btn" target="_blank" href="<?php echo $directions; ?>">Itinéraire</a></p>
-    </div>
-
-  <?php } ?>
 
 
 
