@@ -653,9 +653,9 @@ function initMap() {
 			loc_cats.push(lc);
 		}
 	})
-	console.log(loc_cats);
 
 	var $loc_cats_container = $('#loc_cats_container');
+	$loc_cats_container.empty();
 	loc_cats.forEach(lc => {
 		const node = document.createElement('SPAN');
 		node.classList.add('active');
