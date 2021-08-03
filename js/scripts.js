@@ -483,6 +483,9 @@ var markers = [];
 function initMap() {
 
 
+
+
+
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: { lat: latitude, lng: longitude },
 		zoom: 13,
@@ -643,6 +646,25 @@ function initMap() {
 	var infowindow = new google.maps.InfoWindow;
 
 
+	var all_loc_cats = locations.map(l => l[2]);
+	var loc_cats = [];
+	all_loc_cats.forEach(lc => {
+		if (!loc_cats.includes(lc)) {
+			loc_cats.push(lc);
+		}
+	})
+	console.log(loc_cats);
+
+	var $loc_cats_container = $('#loc_cats_container');
+	loc_cats.forEach(lc => {
+		const node = document.createElement('SPAN');
+		node.classList.add('active');
+		node.innerHTML = lc;
+		node.addEventListener('click', (e) => {
+			toggleCategory(lc)
+		})
+		$loc_cats_container.append(node)
+	})
 
 
 

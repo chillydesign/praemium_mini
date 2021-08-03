@@ -69,8 +69,8 @@
 
   <div class="globalmap invisible">
     <div class="map_layers_nav">
-      <div class="container">
-        <span class="active" onclick="toggleCategory('transport');">Transports</span>
+      <div class="container" id="loc_cats_container">
+        <!-- <span class="active" onclick="toggleCategory('transport');">Transports</span>
         <span class="active" onclick="toggleCategory('ecole');">Ecoles</span>
         <span class="active" onclick="toggleCategory('parc');">Parcs</span>
         <span class="active" onclick="toggleCategory('commerce');">Commerces</span>
@@ -78,7 +78,7 @@
         <span class="active" onclick="toggleCategory('sport');">Centre Sportif</span>
         <span class="active" onclick="toggleCategory('centreloisirs');">Centre de Loisirs</span>
         <span class="active" onclick="toggleCategory('bibliotheque');">Bibliothèques</span>
-        <span class="active" onclick="toggleCategory('pharmacie');">Pharmacies</span>
+        <span class="active" onclick="toggleCategory('pharmacie');">Pharmacies</span> -->
       </div>
     </div>
     <div id="map"></div>
