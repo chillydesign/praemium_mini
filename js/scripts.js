@@ -659,7 +659,7 @@ function initMap() {
 	loc_cats.forEach(lc => {
 		const node = document.createElement('SPAN');
 		node.classList.add('active');
-		node.innerHTML = lc;
+		node.innerHTML = translateCategory(lc);
 		node.addEventListener('click', (e) => {
 			toggleCategory(lc)
 		})
@@ -707,6 +707,30 @@ function toggleCategory(category) {
 	}
 }
 
+
+function translateCategory(cat) {
+	if (cat == 'transport') {
+		return `Transports`;
+	} else if (cat == 'ecole') {
+		return `Ecoles`;
+	} else if (cat == 'parc') {
+		return `Parcs`;
+	} else if (cat == 'commerce') {
+		return `Commerces`;
+	} else if (cat == 'parking') {
+		return `Parkings`;
+	} else if (cat == 'sport') {
+		return `Centre Sportif`;
+	} else if (cat == 'centreloisirs') {
+		return `Centre de Loisirs`;
+	} else if (cat == 'bibliotheque') {
+		return `Bibliothèques`;
+	} else if (cat == 'pharmacie') {
+		return `Pharmacies`;
+	} else {
+		return cat;
+	}
+}
 
 
 
