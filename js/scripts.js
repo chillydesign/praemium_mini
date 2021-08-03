@@ -646,7 +646,7 @@ function initMap() {
 	var infowindow = new google.maps.InfoWindow;
 
 
-	var all_loc_cats = locations.map(l => l[2]);
+	var all_loc_cats = locations.map(l => l[3]);
 	var loc_cats = [];
 	all_loc_cats.forEach(lc => {
 		if (!loc_cats.includes(lc)) {
