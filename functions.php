@@ -112,7 +112,7 @@ function html5blank_conditional_scripts() {
 }
 
 function wf_version() {
-    return '1.9.0';
+    return '1.9.1';
 }
 
 // Load HTML5 Blank styles
