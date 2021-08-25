@@ -12,7 +12,7 @@
               <a target="_blank" href="<?php echo $instagram; ?>" class="social_link social_instagram">Instagram</a>
             <?php endif; ?>
 
-            <?php $email_subject = get_field('header_email_subject', 'option'); ?>
+            <?php $email_subject = get_field('header_email_subject'); ?>
             <?php if (!$email_subject) {
               $email_subject = 'Les Townhouses du Cèdre';
             } ?>
