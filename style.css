@@ -1842,7 +1842,7 @@ span.wplc_system_notification {
 
   .branding li {
     font-size: 20px;
-    line-height: 80px
+    /* line-height: 80px */
   }
 
   header .branding li a {
