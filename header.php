@@ -46,7 +46,7 @@
 		<meta property="og:description" content="<?php echo $smp_description; ?>">
 		<meta itemprop="description" content="<?php echo $smp_description; ?>">
 	<?php endif; ?>
-	<?php if ($smp_images) : ?>
+	<?php if ($smp_image) : ?>
 		<meta itemprop="image" content="<?php echo $smp_image; ?>">
 		<meta name="twitter:image" content="<?php echo $smp_image; ?>">
 		<meta property="og:image" content="<?php echo $smp_image; ?>">
