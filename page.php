@@ -5,9 +5,7 @@
 
 
 
-<div id="mobile_video">
-	<video playsinline muted loop poster="<?php echo get_field('title_background_image'); ?>" id="mobile_vidbg" autoplay="autoplay"></video>
-</div>
+
 
 
 <!--		<?php // if (have_posts()): while (have_posts()) : the_post(); 
