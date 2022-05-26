@@ -1269,10 +1269,30 @@ body .bx-wrapper .bx-viewport {
   right: 0;
   min-width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;display:none;
   /* filter: grayscale(1); -webkit-filter: grayscale(1); -moz-filter: grayscale(1); -o-filter: grayscale(1); */
 }
 
+
+@media (min-width: 768px) {
+  #vidbg  {
+    display:block;
+  }
+}
+
+#mobile_video {}
+
+#mobile_vidbg {
+  width:100%;
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  #mobile_video {
+    display:none;
+  }
+
+}
 
 .issuuembed.issuu-isrendered {
   max-width: 90vw !important;

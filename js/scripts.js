@@ -614,12 +614,15 @@ function translateCategory(cat) {
 
 function setVideo() {
   var $video = jQuery("#vidbg");
+  var $mobile_vidbg = jQuery("#mobile_vidbg");
 
   if (typeof video_mp4 != "undefined" && video_mp4 != "") {
     $video.append('<source src="' + video_mp4 + '" />');
+    $mobile_vidbg.append('<source src="' + video_mp4 + '" />');
   }
   if (typeof video_ogv != "undefined" && video_ogv != "") {
     $video.append('<source src="' + video_ogv + '" />');
+    $mobile_vidbg.append('<source src="' + video_ogv + '" />');
   }
 
   var video = document.querySelector("video");
