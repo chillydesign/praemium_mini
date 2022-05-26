@@ -413,7 +413,7 @@ function initMap() {
   });
 
   var iconBase =
-    "http://praemium-re.com//wp-content/themes/praemium_mini/img/icons/";
+    "https://praemium-re.com//wp-content/themes/praemium_mini/img/icons/";
   var icons = {
     bibliotheque: {
       icon: {
