@@ -34,9 +34,7 @@
 			<?php get_template_part('navigation'); ?>
 		</div>
 
-		<div id="mobile_video">
-			<video playsinline muted loop poster="<?php echo get_field('title_background_image'); ?>" id="mobile_vidbg" autoplay="autoplay"></video>
-		</div>
+
 
 
 		<?php
