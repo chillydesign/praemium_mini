@@ -496,7 +496,18 @@ header .branding li a {
 }
 
 
-
+section.background_white {
+  background-color: white;
+}
+section.background_light_gray {
+  background-color: #bbb;
+}
+section.background_dark_gray {
+  background-color: #444;
+}
+section.background_black {
+  background-color: black;
+}
 
 
 
