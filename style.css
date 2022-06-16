@@ -1967,3 +1967,14 @@ a.bouton404 {
 .mobile_itineraire {
   background-color: white;
 }
+
+
+.iframe_container {
+padding: 40px;
+}
+
+.iframe_container  iframe {
+
+width: 100%;
+margin: auto;
+}

@@ -488,7 +488,18 @@
 					</section>
 				<?php } elseif (get_row_layout() == 'cartes') {
 					include('markers_map.php');
-				} ?>
+				} elseif (get_row_layout() == 'iframe') {  ?>
+					<?php $background = get_sub_field('background_color'); ?>
+					<?php $url = get_sub_field('url'); ?>
+
+
+					<section class="partenaires background_<?php echo $background; ?>">
+						<div class="iframe_container">
+							<iframe src="<?php echo $url; ?>"></iframe>
+						</div>
+					</section>
+
+				<?php	}; ?>
 
 
 			<?php endwhile ?>
