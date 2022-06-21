@@ -13,7 +13,7 @@
 
 
 <!-- Old version redirected to praemium website -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	window.location.href = 'http://praemium.ch';
 </script> -->
 <!-- End of old version with redirection -->
