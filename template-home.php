@@ -66,19 +66,8 @@
 		min-height: 116px;
 	}
 
-	header#homeheader h1,
-	header#homeheader div.logos {
-		display: inline-block;
-	}
-
-	header#homeheader div.logos {
-		float: right;
-		width: calc(100% - 250px);
-		text-align: right;
-		padding: 18px;
-	}
-
 	header#homeheader h1 {
+		display: inline-block;
 		padding: 0;
 	}
 
@@ -86,6 +75,8 @@
 		display: inline-block;
 		text-indent: -999999999999999999px;
 		height: 0;
+		width: 0;
+		visibility: hidden;
 	}
 
 	header#homeheader h1 img {
@@ -93,15 +84,29 @@
 		width: auto;
 	}
 
-	header#homeheader div.logos img {
-		height: 60px;
-		width: auto;
+	header#homeheader div.logos {
+		display: none;
+		float: right;
+		width: calc(100% - 250px);
+		text-align: right;
+		padding: 18px;
 	}
 
 	header#homeheader div.logos a {
 		display: inline-block !important;
 		padding: 7px 0 0 20px;
 
+	}
+
+	header#homeheader div.logos img {
+		height: 60px;
+		width: auto;
+	}
+
+	@media (min-width: 680px) {
+		header#homeheader div.logos {
+			display: inline-block;
+		}
 	}
 </style>
 
