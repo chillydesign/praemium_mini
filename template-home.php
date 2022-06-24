@@ -102,16 +102,18 @@
 
 	<header id="homeheader">
 		<div class="container">
-			<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
-			<div class="logos">
-				<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> <span>Luxury Real Estate</span>
-				</a>
-				<a href="https://www.svit.ch/" target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/new_logo_svit.png" alt="SVIT logo"> <span>SVIT</span>
-				</a>
+			<div>
+				<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
+				<div class="logos">
+					<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> <span>Luxury Real Estate</span>
+					</a>
+					<a href="https://www.svit.ch/" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/new_logo_svit.png" alt="SVIT logo"> <span>SVIT</span>
+					</a>
+				</div>
+				<div style="clear:both;"></div>
 			</div>
-			<div style="clear:both;"></div>
 		</div>
 	</header>
 
