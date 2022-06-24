@@ -64,6 +64,30 @@
 		background-color: #000;
 		position: relative;
 	}
+
+	header#homeheader h1,
+	header#homeheader div.logos {
+		display: inline-block;
+	}
+
+	header#homeheader div.logos {
+		float: right;
+	}
+
+	header#homeheader span {
+		display: block;
+		text-indent: -999999999999999999px;
+	}
+
+	header#homeheader h1 img {
+		height: 110px;
+		width: auto;
+	}
+
+	header#homeheader div.logos img {
+		height: 60px;
+		width: auto;
+	}
 </style>
 
 
@@ -77,14 +101,17 @@
 
 
 	<header id="homeheader">
-		<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
-		<div class="logos">
-			<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> <span>Luxury Real Estate</span>
-			</a>
-			<a href="https://www.svit.ch/" target="_blank">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="SVIT logo"> <span>SVIT</span>
-			</a>
+		<div class="container">
+			<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
+			<div class="logos">
+				<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> <span>Luxury Real Estate</span>
+				</a>
+				<a href="https://www.svit.ch/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/new_logo_svit.png" alt="SVIT logo"> <span>SVIT</span>
+				</a>
+			</div>
+			<div style="clear:both;"></div>
 		</div>
 	</header>
 
