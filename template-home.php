@@ -63,6 +63,7 @@
 	header#homeheader {
 		background-color: #000;
 		position: relative;
+		min-height: 116px;
 	}
 
 	header#homeheader h1,
@@ -72,11 +73,19 @@
 
 	header#homeheader div.logos {
 		float: right;
+		width: calc(100% - 250px);
+		text-align: right;
+		padding: 18px;
+	}
+
+	header#homeheader h1 {
+		padding: 0;
 	}
 
 	header#homeheader span {
-		display: block;
+		display: inline-block;
 		text-indent: -999999999999999999px;
+		height: 0;
 	}
 
 	header#homeheader h1 img {
@@ -87,6 +96,10 @@
 	header#homeheader div.logos img {
 		height: 60px;
 		width: auto;
+	}
+
+	header#homeheader div.logos a {
+		display: inline-block;
 	}
 </style>
 
@@ -102,7 +115,7 @@
 
 	<header id="homeheader">
 		<div class="container">
-			<div>
+			<div style="padding:0 15px;">
 				<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
 				<div class="logos">
 					<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
