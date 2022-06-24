@@ -99,7 +99,7 @@
 	}
 
 	header#homeheader div.logos a {
-		display: inline-block;
+		display: inline-block !important;
 	}
 </style>
 
