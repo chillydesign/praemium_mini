@@ -115,16 +115,18 @@
 		</div>
 	</header>
 
+	<div class="container">
 
+		<div id='reciprocity'></div>
+		<script src='https://praemium.luxuryrealestate.com/reciprocity.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			Reciprocity.init({
+				membersite: "praemium",
+				parentLocation: window.location
+			});
+		</script>
 
-	<div id='reciprocity'></div>
-	<script src='https://praemium.luxuryrealestate.com/reciprocity.js' type='text/javascript'></script>
-	<script type='text/javascript'>
-		Reciprocity.init({
-			membersite: "praemium",
-			parentLocation: window.location
-		});
-	</script>
+	</div>
 
 	<?php get_footer(); ?>
 
