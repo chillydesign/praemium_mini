@@ -59,23 +59,31 @@
 
 </head>
 
+<style>
+	header#homeheader {
+		background-color: #000;
+		position: relative;
+	}
+</style>
+
 
 <body <?php body_class(); ?>>
-	<div class="loader">
+	<!-- <div class="loader">
 		<div class="loaderinside">
-			<?php include('img/logo.svg'); ?>
+			<?php //include('img/logo.svg'); 
+			?>
 		</div>
-	</div>
+	</div> -->
 
 
-	<header>
-		<h1><img src="img/logo-praemium-immobilier-bw2.png" alt="Praemium Immobilier logo"> Praemium Immobilier</h1>
+	<header id="homeheader">
+		<h1><img src="<?php echo get_template_directory_uri(); ?>/img/logo-praemium-immobilier-bw2.png" alt="Praemium Immobilier logo"> Praemium Immobilier</h1>
 		<div class="logos">
 			<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
-				<img src="img/logo_re.jpg" alt="Luxury Real Estate logo"> Luxury Real Estate
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> Luxury Real Estate
 			</a>
 			<a href="https://www.svit.ch/" target="_blank">
-				<img src="img/logo_re.jpg" alt="SVIT logo"> SVIT
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="SVIT logo"> SVIT
 			</a>
 		</div>
 	</header>
