@@ -100,6 +100,8 @@
 
 	header#homeheader div.logos a {
 		display: inline-block !important;
+		padding: 7px 0 0 20px;
+
 	}
 </style>
 
@@ -116,13 +118,13 @@
 	<header id="homeheader">
 		<div class="container">
 			<div style="padding:0 15px;">
-				<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"></h1>
+				<h1><img src="<?php echo get_template_directory_uri(); ?>/img/praemium-immobilier-logo.png" alt="Praemium Immobilier logo"> <span>Praemium Immobilier</span></h1>
 				<div class="logos">
 					<a href="https://www.luxuryrealestate.com/profiles/9295" target="_blank">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo_re.jpg" alt="Luxury Real Estate logo"> <span>Luxury Real Estate</span>
 					</a>
 					<a href="https://www.svit.ch/" target="_blank">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/new_logo_svit.png" alt="SVIT logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/new_logo_svit.png" alt="SVIT logo"> <span>SVIT</span>
 					</a>
 				</div>
 				<div style="clear:both;"></div>
