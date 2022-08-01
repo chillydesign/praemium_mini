@@ -62,8 +62,15 @@
 <style>
 	header#homeheader {
 		background-color: #000;
-		position: relative;
+		/* position: relative; */
+		position: fixed;
+		top: 0 !important;
+
 		min-height: 116px;
+	}
+
+	body {
+		padding-top: 150px;
 	}
 
 	header#homeheader h1 {
