@@ -50,6 +50,17 @@
 					</section>
 				<?php }
 
+				if (get_row_layout() == 'video') {  ?>
+
+					<section class="video_section" style="background-image : url(<?php echo get_sub_field('image'); ?>)" <?php if (get_sub_field('id')) {
+																																echo 'id="' . get_sub_field('id') . '"';
+																															} ?>>
+
+						<video playsinline muted loop poster="<?php echo get_sub_field('video'); ?>" id="" autoplay="autoplay"></video>
+					</section>
+
+				<?php	}
+
 				if (get_row_layout() == 'slider') { ?>
 					<section style="background:white" class="slider " <?php if (get_sub_field('id')) {
 																			echo 'id="' . get_sub_field('id') . '"';
