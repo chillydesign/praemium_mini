@@ -1885,3 +1885,15 @@ a.bouton404 {
 .min_heightvh iframe {
   min-height: 100vh;
 }
+
+.video_section {
+  position: relative;
+}
+
+.video_section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
