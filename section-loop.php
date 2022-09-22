@@ -56,7 +56,7 @@
 																																echo 'id="' . get_sub_field('id') . '"';
 																															} ?>>
 
-						<video playsinline muted loop poster="<?php echo get_sub_field('video'); ?>" id="" autoplay="autoplay"></video>
+						<video playsinline muted loop poster="<?php echo get_sub_field('video')['url']; ?>" id="" autoplay="autoplay"></video>
 					</section>
 
 				<?php	}
