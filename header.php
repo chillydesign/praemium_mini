@@ -70,4 +70,7 @@
 				<?php include('img/logo.svg'); ?>
 			</div>
 		</div>
+		<script>
+			const show_loader_screen = true;
+		</script>
 	<?php endif; ?>

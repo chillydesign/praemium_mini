@@ -170,20 +170,22 @@ jQuery(function () {
   }
 
   // SHOW WELCOME SCREEN
-  jQuery("html, body").css({
-    overflow: "hidden",
-    height: "100%",
-  });
-
-  setTimeout(init, 200);
-
-  setTimeout(function () {
+  if (typeof show_loader_screen !== "undefined") {
     jQuery("html, body").css({
-      overflow: "auto",
-      height: "auto",
+      overflow: "hidden",
+      height: "100%",
     });
-    jQuery(".loader").hide();
-  }, 3000);
+
+    setTimeout(init, 200);
+
+    setTimeout(function () {
+      jQuery("html, body").css({
+        overflow: "auto",
+        height: "auto",
+      });
+      jQuery(".loader").hide();
+    }, 3000);
+  }
 
   if ($window_width > $mobile_width) {
   }
