@@ -1922,3 +1922,7 @@ a.bouton404 {
   width: 100%;
   height: auto;
 }
+
+body.lescontemporainesdestattes #contact .col-sm-6 {
+  background-position: right;
+}
