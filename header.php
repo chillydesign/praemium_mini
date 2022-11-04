@@ -59,8 +59,15 @@
 
 
 <body <?php body_class(); ?>>
-	<div class="loader">
-		<div class="loaderinside">
-			<?php include('img/logo.svg'); ?>
+
+
+
+	<?php $hide_welcome_screen = get_field('hide_welcome_screen'); ?>
+
+	<?php if ($hide_welcome_screen == false || $hide_welcome_screen == null) : ?>
+		<div class="loader">
+			<div class="loaderinside">
+				<?php include('img/logo.svg'); ?>
+			</div>
 		</div>
-	</div>
+	<?php endif; ?>
