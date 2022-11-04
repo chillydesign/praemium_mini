@@ -862,6 +862,14 @@ span {
   z-index: 5;
 }
 
+.left_slidies_inner h1 {
+  font-size: 1.9em;
+}
+.left_slidies_inner p,
+.left_slidies_inner li {
+  font-size: 1.2em;
+}
+
 .white .left_slidies_inner {
   color: black;
 }
