@@ -39,12 +39,12 @@
     <div class="navigation">
       <div class="container-fluid">
         <div class="row">
-          <ul class="branding col-md-3 col-xs-8 ">
+          <ul class="branding col-md-4 col-xs-8 ">
 
             <li> <a href="#"><?php echo get_field('pagename') ?></a></li>
           </ul>
 
-          <div class="col-md-9 col-xs-4">
+          <div class="col-md-8 col-xs-4">
             <nav>
               <ul>
                 <?php // chilly_nav('header-menu'); 
