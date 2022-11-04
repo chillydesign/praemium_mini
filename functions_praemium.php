@@ -82,10 +82,13 @@ function praemium_form_shortcode($atts) {
 
   if ($primogefi) {
     $pr_frm .= '<a style="text-decoration:none" href="http://www.primogefi.ch/">
-      <div class="contact-macaron">
+      <div class="contact-macaron primogefi_box">
+      <img src="http://tattes.ch/wp-content/uploads/2020/12/logo-primogefi-sans-ombre-plan-de-travail-1.png" alt="">
+
       <p>
       <strong>Une nouvelle promotion Primogefi</strong><br>
       </p>
+   
       </div>
       </a>';
   } else {
