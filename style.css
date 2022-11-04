@@ -1233,7 +1233,9 @@ body .bx-wrapper .bx-viewport {
 }
 
 .contact-macaron.primogefi_box {
-  background-color: transparent;
+  background-color: #f1f1f1;
+  color: #6886c3;
+  border: 1px solid #cbcbd9;
 }
 
 .contact-macaron:hover {
