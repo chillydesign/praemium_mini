@@ -62,7 +62,7 @@ function praemium_form_shortcode($atts) {
 
   $pr_frm .= '
     <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6"><div style="height:300px">
     <p><strong>Praemium Immobilier</strong></p>
 
     <p>
@@ -76,7 +76,8 @@ function praemium_form_shortcode($atts) {
     <strong>Tel. : +41(0)22 736 39 80</strong>
     </p>
     </div>
-    <div class="col-md-6">';
+    </div>
+    <div class="col-md-6"><div style="height:300px">';
 
 
   if ($primogefi) {
@@ -104,6 +105,7 @@ function praemium_form_shortcode($atts) {
 
 
 
+  $pr_frm .= '</div> ';
   $pr_frm .= '</div> ';
   $pr_frm .= '</div> ';
 
