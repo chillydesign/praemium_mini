@@ -115,6 +115,11 @@ function wf_version() {
     return '2.0.5';
 }
 
+function is_tattes() {
+    $s = $_SERVER['SERVER_NAME'];
+    return ($s == 'tattes.ch');
+}
+
 // Load HTML5 Blank styles
 function html5blank_styles() {
     wp_register_style('reset', get_template_directory_uri() . '/css/reset.css', array(), '1.0', 'all');
