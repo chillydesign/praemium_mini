@@ -49,8 +49,11 @@ function get_all_sources() {
 function praemium_form_shortcode($atts) {
   global $post;
   $a = shortcode_atts(array(
-    'bouton' => 'Acheteur'
+    'bouton' => 'Acheteur',
+    'primogefi' => "false"
   ), $atts);
+
+  $primogefi = $a['primogefi'] == 'true';
 
   global $contact_lots; // define houses in the page loop
   $contact_backs = get_all_contact_backs();
@@ -73,20 +76,35 @@ function praemium_form_shortcode($atts) {
     <strong>Tel. : +41(0)22 736 39 80</strong>
     </p>
     </div>
-    <div class="col-md-6">
-    <a style="text-decoration:none" href="mailto:info@praemium.ch;nc@praemium.ch;info@praemium.ch?Subject=Estimation%20de%20ma%20propriété">
-    <div class="contact-macaron">
-    <p>
-    <strong>Vous êtes propriétaire?</strong><br>
-    Nous recherchons pour nos clients des objets immobiliers à la vente<br>
-    Estimation gratuite,<br>
-    Discrétion assurée,<br>
-    Conseils personnalisés
-    </p>
-    </div>
-    </a>
-    </div>
-    ';
+    <div class="col-md-6">';
+
+
+  if ($primogefi) {
+    $pr_frm .= '<a style="text-decoration:none" href="http://www.primogefi.ch/">
+      <div class="contact-macaron">
+      <p>
+      <strong>Une nouvelle promotion Primogefi</strong><br>
+      </p>
+      </div>
+      </a>';
+  } else {
+    $pr_frm .= '<a style="text-decoration:none" href="mailto:info@praemium.ch;nc@praemium.ch;info@praemium.ch?Subject=Estimation%20de%20ma%20propriété">
+      <div class="contact-macaron">
+      <p>
+      <strong>Vous êtes propriétaire?</strong><br>
+      Nous recherchons pour nos clients des objets immobiliers à la vente<br>
+      Estimation gratuite,<br>
+      Discrétion assurée,<br>
+      Conseils personnalisés
+      </p>
+      </div>
+      </a>';
+  }
+
+
+
+
+  $pr_frm .= '</div> ';
 
 
 
