@@ -210,7 +210,7 @@ jQuery(function () {
     } else {
       // THIS IS FOR DESKTOP USERS
       setAmenitiesMap();
-      makeSliders();
+      // makeSliders();
       minHeightForSection();
       jQuery(".globalmap").addClass("invisible");
 

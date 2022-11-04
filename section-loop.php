@@ -187,8 +187,7 @@
 						<div style="/*display:table-cell; width:100%; vertical-align:middle;*/">
 							<div style="width:60%; min-width:250px; margin:auto;">
 								<h2><?php echo get_sub_field('title'); ?></h2>
-								<ul class="bxslider">
-									<!--  data-adaptiveheight="false" -->
+								<ul class="bxslider" data-adaptiveheight="false">
 									<?php while (have_rows('partner')) : the_row(); ?>
 										<li>
 											<h3><?php echo get_sub_field('nom'); ?></h3>
