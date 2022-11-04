@@ -105,6 +105,7 @@ function praemium_form_shortcode($atts) {
 
 
   $pr_frm .= '</div> ';
+  $pr_frm .= '</div> ';
 
 
 
