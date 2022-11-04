@@ -867,7 +867,7 @@ span {
 }
 .left_slidies_inner p,
 .left_slidies_inner li {
-  font-size: 1.2em;
+  font-size: 1.2em !important;
 }
 
 .white .left_slidies_inner {
