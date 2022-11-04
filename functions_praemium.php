@@ -81,7 +81,7 @@ function praemium_form_shortcode($atts) {
 
 
   if ($primogefi) {
-    $pr_frm .= '<a style="text-decoration:none" href="http://www.primogefi.ch/">
+    $pr_frm .= '<a target="_blank" style="text-decoration:none" href="http://www.primogefi.ch/">
       <div class="contact-macaron primogefi_box">
       <img src="http://tattes.ch/wp-content/uploads/2020/12/logo-primogefi-sans-ombre-plan-de-travail-1.png" alt="">
 
