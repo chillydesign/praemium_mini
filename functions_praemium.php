@@ -62,7 +62,7 @@ function praemium_form_shortcode($atts) {
 
   $pr_frm .= '
     <div class="row">
-    <div class="col-md-6"><div style="height:300px">
+    <div class="col-md-6"><div style="min-height:280px">
     <p><strong>Praemium Immobilier</strong></p>
 
     <p>
@@ -77,7 +77,7 @@ function praemium_form_shortcode($atts) {
     </p>
     </div>
     </div>
-    <div class="col-md-6"><div style="height:300px">';
+    <div class="col-md-6"><div style="min-height:280px">';
 
 
   if ($primogefi) {
