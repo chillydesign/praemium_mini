@@ -290,7 +290,7 @@ function get_email_from_praemium_form() {
     $spam_data = array(
       'blog' => 'http://praemium-re.com',
       'user_ip' => $_SERVER['REMOTE_ADDR'],
-      'user_agent' => $_SERVER['HTTP_USER_AGENT']['browser_name_pattern'],
+      'user_agent' => $_SERVER['HTTP_USER_AGENT'],
       'referrer' => $referrer,
       'permalink' => $referrer,
       'comment_type' => 'comment',
