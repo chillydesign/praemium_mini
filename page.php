@@ -22,10 +22,17 @@
 
 
 
-
+<?php
+$video_mp4 = get_field('video_mp4');
+$video_ogv = get_field('video_ogv');
+?>
 <script type="text/javascript">
-	var video_mp4 = '<?php echo get_field('video_mp4')['url']; ?>';
-	var video_ogv = '<?php echo get_field('video_ogv')['url']; ?>';
+	<?php if ($video_mp4) : ?>
+		var video_mp4 = '<?php echo $video_mp4['url']; ?>';
+	<?php endif; ?>
+	<?php if ($video_ogv) : ?>
+		var video_ogv = '<?php echo $video_ogv['url']; ?>';
+	<?php endif; ?>
 </script>
 
 
