@@ -41,7 +41,9 @@ $video_ogv = get_field('video_ogv');
 <?php $bgimage = get_field('title_background_image'); ?>
 <?php if ($bgimage) : ?>
 	<div id="bg" style="background-image: url(<?php echo $bgimage; ?>">
-		<!-- <video playsinline muted loop poster=" <?php echo $bgimage; ?>" id="vidbg" autoplay="autoplay"></video> -->
+		<?php if ($video_mp4) : ?>
+			<video playsinline muted loop poster=" <?php echo $bgimage; ?>" id="vidbg" autoplay="autoplay"></video>
+		<?php endif; ?>
 	</div>
 <?php endif; ?>
 
