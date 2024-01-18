@@ -112,7 +112,7 @@ function html5blank_conditional_scripts() {
 }
 
 function wf_version() {
-    return '2.0.5';
+    return '2.0.6';
 }
 
 function is_tattes() {

@@ -36,9 +36,16 @@ $video_ogv = get_field('video_ogv');
 </script>
 
 
-<div id="bg">
-	<video playsinline muted loop poster="<?php echo get_field('title_background_image'); ?>" id="vidbg" autoplay="autoplay"></video>
-</div>
+
+
+<?php $bgimage = get_field('title_background_image'); ?>
+<?php if ($bgimage) : ?>
+	<div id="bg" style="background-image: url(<?php echo $bgimage; ?>">
+		<!-- <video playsinline muted loop poster=" <?php echo $bgimage; ?>" id="vidbg" autoplay="autoplay"></video> -->
+	</div>
+<?php endif; ?>
+
+
 
 <?php if (get_field('couleur_1')  || get_field('couleur_2') || get_field('macaron_couleur')) : ?>
 	<?php $macaron_couleur = get_field('macaron_couleur'); ?>
