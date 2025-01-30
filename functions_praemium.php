@@ -270,10 +270,26 @@ function get_email_from_praemium_form() {
     $subject =  $_POST['promotion'] . ' - Message ' . $_POST['person_type'];
     $body = "Réponses au formulaire de contact:\n\n";
     $comment_content = '';
-    foreach ($_POST as $key => $value) {
-      $body .=  $key  . ':  ' . $value . "\n";
-    }
-    //$body .= "\n End of message";
+    // foreach ($_POST as $key => $value) {
+    //   $body .=  $key  . ':  ' . $value . "\n";
+    // }
+    // //$body .= "\n End of message";
+
+    $body .= "Prénom: "  . $_POST['prenom'] . "\n";
+    $body .= "Nom: "  . $_POST['person_nom'] . "\n";
+    $body .= "Adresse: "  . $_POST['address'] . "\n";
+    $body .= "Code Postal: "  . $_POST['postcode'] . "\n";
+    $body .= "Ville: "  . $_POST['ville'] . "\n";
+    $body .= "Téléphone: "  . $_POST['person_telephone'] . "\n";
+    $body .= "Email: "  . $_POST['person_email'] . "\n";
+    $body .= "source: "  . $_POST['source'] . "\n";
+    $body .= "interest: "  . $_POST['interest'] . "\n";
+    $body .= "contact: "  . $_POST['contactback'] . "\n";
+    $body .= "Entreprise de courtage: "  . $_POST['company'] . "\n";
+    $body .= "Message: "  . $_POST['message'] . "\n";
+
+
+
 
 
     // TO DO CHECK IF ALL NECESSARY FIELDS HAVE BEEN FILLED IN
