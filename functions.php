@@ -94,8 +94,8 @@ function html5blank_header_scripts() {
         // wp_deregister_script('jquery');
 
 
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
+        // wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
+        // wp_enqueue_script('modernizr'); // Enqueue it!
 
 
 
