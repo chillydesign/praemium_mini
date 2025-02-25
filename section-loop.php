@@ -431,7 +431,7 @@
 																				echo '-';
 																			} ?></td>
 												<?php } ?>
-
+												<?php $statut = get_sub_field('statut'); ?>
 												<?php if (in_array('preview', $fields) and $statut != 'booked' and $statut != 'sold') { ?>
 													<td><span class="plus plus_<?php echo $i; ?>">+</span></td>
 												<?php } ?>
