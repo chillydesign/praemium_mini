@@ -352,12 +352,27 @@ jQuery(function () {
   });
   jQuery("#globalmap").on("click", function () {
     jQuery(this).addClass("active");
+    openGlobalMap();
+  });
+
+  function openGlobalMap() {
     jQuery("#amenites").removeClass("active");
     jQuery(".globalmap").removeClass("invisible");
     jQuery(".amenites").addClass("invisible");
-
     initMap();
-  });
+  }
+
+  $map_tab_spans = $(".maps_tabs span");
+  if ($map_tab_spans) {
+    if ($map_tab_spans.length == 1) {
+      if ($map_tab_spans[0].textContent === "Plan de situation") {
+        setTimeout(() => {
+          console.log("clicking global map");
+          openGlobalMap();
+        }, 1000);
+      }
+    }
+  }
 
   jQuery("#courtier").on("click", function () {
     jQuery(".courtier").show();
