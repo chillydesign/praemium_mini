@@ -457,9 +457,7 @@
 
 																<?php $pagetitle = get_the_title(); ?>
 																<?php $nnn = (get_sub_field('number')) ? 'le lot ' .  get_sub_field('number') : 'un des lots'; ?>
-																<?php if (1 === preg_match('~[0-9]~', $string)) {
-																	echo "<script type='text/javascript'> console.log('boop'); </script>";
-																} ?>
+
 																<?php if (get_sub_field('bouton_contact')) {
 																	$contact_choice = get_sub_field('bouton_contact');
 																} else {
