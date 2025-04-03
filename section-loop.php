@@ -202,10 +202,24 @@
 						</div>
 					</section>
 				<?php } elseif (get_row_layout() == 'price_list') { ?>
-					<?php $has_brochure = get_field('brochure');
-					$link_text = false;  ?>
-					<?php if ($has_brochure == 'link')  $link_text =  get_field('brochure_lien'); ?>
-					<?php if ($has_brochure == 'file')  $link_text =  get_field('brochure_fichier')['url']; ?>
+
+					<?php
+					$has_brochure = get_field('brochure');
+					$link_text = false;
+					if ($has_brochure) {
+						$brochure_lien = get_field('brochure_lien');
+						$brochure_fichier = get_field('brochure_fichier');
+						if ($has_brochure == 'link') {
+							$link_text =   $brochure_lien;
+						}
+						if ($has_brochure == 'file') {
+							if ($brochure_fichier) {
+								$link_text = $brochure_fichier['url'];
+							}
+						}
+					}
+					?>
+
 
 					<?php $fields = get_sub_field('fields_to_display'); ?>
 
