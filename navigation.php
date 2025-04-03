@@ -22,15 +22,25 @@
           </div>
           <div class="col-sm-6 col-sm-right">
 
-            <?php $has_brochure = get_field('brochure');
+            <?php
+            $has_brochure = get_field('brochure');
             $link_text = false;
-            if ($has_brochure) :  ?>
-              <?php if ($has_brochure == 'link')  $link_text =  get_field('brochure_lien'); ?>
-              <?php if ($has_brochure == 'file')  $link_text =  get_field('brochure_fichier')['url']; ?>
+            if ($has_brochure) {
+              $brochure_lien = get_field('brochure_lien');
+              $brochure_fichier = get_field('brochure_fichier');
+              if ($has_brochure == 'link') {
+                $link_text =   $brochure_lien;
+              }
+              if ($has_brochure == 'file') {
+                if ($brochure_fichier) {
+                  $link_text = $brochure_fichier['url'];
+                }
+              }
+            ?>
               <?php if ($link_text) : ?>
                 <a target="_blank" href="<?php echo $link_text; ?>" class="brochure">Afficher la brochure</a>
               <?php endif; ?>
-            <?php endif; ?>
+            <?php }; ?>
             <a href="#contact" class="rdv">Prendre rendez-vous</a>
           </div>
 
